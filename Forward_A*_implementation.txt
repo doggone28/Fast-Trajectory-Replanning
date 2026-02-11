@@ -1,0 +1,35 @@
+1 procedure ComputePath()
+2 while g(sgoal) > mins′∈OPEN(g(s′) + h(s′))
+3 remove a state s with the smallest f-value g(s) + h(s) from OPEN;
+4 CLOSED := CLOSED ∪ {s};
+5 for all actions a ∈ A(s)
+6 if search(succ(s, a)) < counter
+7 g(succ(s, a)) := ∞;
+8 search(succ(s, a)) := counter;
+9 if g(succ(s, a)) > g(s) + c(s, a)
+10 g(succ(s, a)) := g(s) + c(s, a);
+11 tree(succ(s, a)) := s;
+12 if succ(s, a) is in OPEN then remove it from OPEN;
+13 insert succ(s, a) into OPEN with f-value g(succ(s, a)) + h(succ(s, a));
+14 procedure Main()
+15 counter := 0;
+16 for all states s ∈ S
+17 search(s) := 0;
+18 while sstart 6 = sgoal
+19 counter := counter + 1;
+20 g(sstart) := 0;
+21 search(sstart) := counter;
+22 g(sgoal) := ∞;
+23 search(sgoal) := counter;
+24 OPEN := CLOSED := ∅;
+25 insert sstart into OPEN with f-value g(sstart) + h(sstart);
+26 ComputePath();
+27 if OPEN = ∅
+28 print “I cannot reach the target.”;
+29 stop;
+30 follow the tree-pointers from sgoal to sstart and then move the agent along the resulting path
+from sstart to sgoal until it reaches sgoal or one or more action costs on the path increase;
+31 set sstart to the current state of the agent (if it moved);
+32 update the increased action costs (if any);
+33 print “I reached the target.”;
+34 stop;
