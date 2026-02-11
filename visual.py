@@ -145,9 +145,9 @@ def create_animation(gridworld: GridWorld, trajectory: List[Tuple[int, int]],
         
         if frame > 0:
             traj = np.array(trajectory[:frame+1])
-            ax1.plot(traj[:, 1], traj[:, 0], 'b-', linewidth=2, alpha=0.7)
+            ax1.plot(traj[:, 1], traj[:, 0], 'b-', linewidth=0.5, alpha=0.7)
             # Current position
-            ax1.plot(trajectory[frame][1], trajectory[frame][0], 'bo', markersize=12)
+            ax1.plot(trajectory[frame][1], trajectory[frame][0], 'bo', markersize=3)
         
         ax1.legend()
         ax1.grid(True, alpha=0.3)
@@ -165,8 +165,8 @@ def create_animation(gridworld: GridWorld, trajectory: List[Tuple[int, int]],
             
             if frame > 0:
                 traj = np.array(trajectory[:frame+1])
-                ax2.plot(traj[:, 1], traj[:, 0], 'b-', linewidth=2, alpha=0.7)
-                ax2.plot(trajectory[frame][1], trajectory[frame][0], 'bo', markersize=12)
+                ax2.plot(traj[:, 1], traj[:, 0], 'b-', linewidth=0.5, alpha=0.7)
+                ax2.plot(trajectory[frame][1], trajectory[frame][0], 'bo', markersize=3)
             
             ax2.legend()
             ax2.grid(True, alpha=0.3)

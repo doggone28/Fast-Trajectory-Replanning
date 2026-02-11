@@ -148,11 +148,8 @@ class GridWorld:
         
 
 
-
-
-
 class AgentKnowledge:
-    """Represents the agent's knowledge about the environment"""
+    
     
     def __init__(self, size: int):
         self.size = size
@@ -160,7 +157,7 @@ class AgentKnowledge:
         self.knowledge = np.full((size, size), -1, dtype=int)
     
     def observe(self, pos: Tuple[int, int], gridworld: GridWorld):
-        """Observe the blockage status of adjacent cells"""
+    
         for neighbor in gridworld.get_neighbors(pos):
             if self.knowledge[neighbor] == -1:  # If not yet observed
                 if gridworld.is_blocked(neighbor):
