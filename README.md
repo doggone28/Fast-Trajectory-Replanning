@@ -1,4 +1,4 @@
 CS419 - Intro to AI
 Assignment 1
-Brandon Son, Kapil *******
-bjs334, *******
+Brandon Son, Kapil Rajpopat
+bjs334, ktr43
